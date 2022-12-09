@@ -34,3 +34,8 @@ sudo docker ps | grep dd-trace-php-1828 | awk -F ' ' '{print $1}' | xargs -I % s
 ```
 sudo docker  run --interactive --tty  image-dd-trace-php-1828 /bin/bash
 ```
+
+## Datadog Environment Variables
+The Datadog environment variables are defined in files/nginx.conf.
+DD_AGENT_HOST is set to a value that is specific to my environment.
+That should not funcationally relevant because the segfault happens before the tracer flushes.
